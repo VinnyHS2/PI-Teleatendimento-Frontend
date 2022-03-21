@@ -40,3 +40,12 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# dependencies
+/node_modules
+*/dist/
+*/e2e/
+e2e/
+*/node_modules/
+/node_modules/
+package-lock.json
