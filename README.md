@@ -4,12 +4,12 @@
 Um software para atendimento remoto de clientes
 
 ### Requisitos:
-	- Conectar duas pessoas
-	- Desconectar duas pessoas
-	- Fila de espera
-	- Avaliar atendimento
-	- Histórico de atendimentos
-	- Cadastro de clientes
+	1 - Conectar duas pessoas
+	2 - Desconectar duas pessoas
+	3 - Fila de espera
+	4 - Avaliar atendimento
+	5 - Histórico de atendimentos
+	6 - Cadastro de clientes
 	
 ### Dependencias Frontend:
 	- Node
