@@ -1,27 +1,33 @@
-# Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
 
-## Development server
+# Teleatendimento
+Um software para atendimento remoto de clientes
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Requisitos:
+	1 - Conectar duas pessoas
+	2 - Desconectar duas pessoas
+	3 - Fila de espera
+	4 - Avaliar atendimento
+	5 - Histórico de atendimentos
+	6 - Cadastro de clientes
+	
+### Dependencias Frontend:
+	- Node
+	- Node Package Manager (npm)
+	- Angular CLI 13
+	
+### Instruções para download:
+Para rodar o frontend, deve-se primeiro instalar todas as dependências.
+	
+  - npm install
+  
+Após isso, basta inicializar o frontend com o comando:
+	
+  - ng serve --open
+	
+### Contato dos membros:
+	- Eduarda Martins: eduardamartins@alunos.utfpr.edu.br (Desenvolvedora)
+	- Henrique Moura Bini: henrque02@gmail.com (Product Owner)
+	- Juliano Kendyi Shinohara: julianoshinohara@alunos.utfpr.edu.br (Scrum master)
+	- Vinicius Henrique Soares: viniciussoares@alunos.utfpr.edu.br (Desenvolvedor)
+  
