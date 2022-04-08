@@ -11,9 +11,20 @@ export class ConectarComponent implements OnInit {
   constructor(public socketService: WebSocketService) {}
 
   ngOnInit(): void {}
-  
+
   conectar() {
-    this.socketService.connectSocket();
+    this.socketService.connectSocket().subscribe({
+      next: (v) => {
+        this.socketService.createSubscription('bit');
+      },
+      error: (e) => {
+        console.error('!!!!!!!!!!!!!!!!!!!!!!!!!', e);
+      },
+      complete: () => {},
+    });
+    this.socketService.onEvent('bit').subscribe((data) => {
+      console.log('>>>>> Recebeu evento', data);
+    });
   }
 
 }

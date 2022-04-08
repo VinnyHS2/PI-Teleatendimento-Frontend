@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject, Subscription } from 'rxjs';
+import { BehaviorSubject, filter, map, Observable, Subject, Subscription } from 'rxjs';
 import { EventSocket } from '../models/event.model';
 import * as Stomp from 'stompjs';
 import * as SockJS from 'sockjs-client';
@@ -34,7 +34,7 @@ export class WebSocketService {
   connectSocket(): Observable<boolean> {
     const token = '';
     // const token = Cookies.get(AuthService.ATTR_TOKEN);
-
+    console.log(this.stompClient);
     if (this.stompClient) {
       return new Observable((observable) => {
         this.connected = true;
@@ -49,13 +49,17 @@ export class WebSocketService {
       this.stompClient = Stomp.over(ws);
 
       this.stompClient.connect(
+        {
+          Authorization: ``,
+        },
         async () => {
           this.connected = true;
+          console.log("chegou aqui")
           // console.log('>>>>> Conectou websocket');
           // this.subscriptions.forEach((value, key) => {
-          this.topicWaintingToSubscription.forEach((key) => {
-            this.createSubscription("bit");
-          });
+          this.createSubscription("bit");
+          // this.topicWaintingToSubscription.forEach((key) => {
+          // });
 
           this.setWebSocketConnected(true);
           observable.next(true);
@@ -73,9 +77,9 @@ export class WebSocketService {
 
           this.setWebSocketConnected(false);
 
-          setTimeout(() => {
-            this.connectSocket().subscribe();
-          }, 2000);
+          // setTimeout(() => {
+          //   this.connectSocket().subscribe();
+          // }, 2000);
         }
       );
     });
@@ -141,4 +145,32 @@ export class WebSocketService {
       observable.complete();
     });
   }
+
+  anyEvent = <T>(): Observable<Object> => {
+    return this.observable.pipe(
+      map((event: EventSocket<T>) => {
+        return event;
+      })
+    );
+  };
+
+  byTopic = <T>(topico: string): Observable<Object> => {
+    return this.observable.pipe(
+      filter((event: EventSocket<T>) => event.topico === topico),
+      map((event: EventSocket<T>) => {
+        return event;
+      })
+    );
+  };
+  onEvent = <T>(tipo: String): Observable<Object> => {
+    return this.observable.pipe(
+      filter(
+        (event: EventSocket<T>) =>
+          event.tipo.toString() === (tipo)
+      ),
+      map((event: EventSocket<T>) => {
+        return event.payload;
+      })
+    );
+  };
 }
