@@ -1,0 +1,28 @@
+.background{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+}
+
+.container{
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+.buttonLoginAluno{
+    width: 140px;
+    height: 30px;
+    background: #013453;
+    border-radius: 1.4422px;
+}

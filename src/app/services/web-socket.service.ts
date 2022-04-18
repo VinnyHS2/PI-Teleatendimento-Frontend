@@ -54,10 +54,9 @@ export class WebSocketService {
         },
         async () => {
           this.connected = true;
-          console.log("chegou aqui")
           // console.log('>>>>> Conectou websocket');
           // this.subscriptions.forEach((value, key) => {
-          this.createSubscription("bit");
+          // this.createSubscription("bit");
           // this.topicWaintingToSubscription.forEach((key) => {
           // });
 
