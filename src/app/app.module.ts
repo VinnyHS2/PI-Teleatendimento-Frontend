@@ -12,6 +12,8 @@ import { PageLoginAlunoComponent } from './pages/page-login-aluno/page-login-alu
 import { PageLoginProfessorComponent } from './pages/page-login-professor/page-login-professor.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { EsperaComponent } from './pages/espera/espera.component';
 
 
 
@@ -20,7 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     ConectarComponent,
     PageLoginAlunoComponent,
-    PageLoginProfessorComponent
+    PageLoginProfessorComponent,
+    NotFoundComponent,
+    EsperaComponent
   ],
   imports: [
     BrowserModule,

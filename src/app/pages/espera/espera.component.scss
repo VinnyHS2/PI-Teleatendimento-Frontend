@@ -1,0 +1,31 @@
+.body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    
+    .backgroundImg{
+        position: fixed;
+        z-index: -1;
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    .conteudo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: larger;
+        width: 400px;
+        height: 300px;
+        background-color: #fff;
+        opacity: 0.9;
+        box-shadow: 15px 19px 12px -5px rgba(0, 0, 0, 0.1);
+        border-radius: 2em;
+
+    }
+
+}
