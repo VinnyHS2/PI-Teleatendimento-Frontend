@@ -43,7 +43,7 @@ export class WebSocketService {
       });
     }
 
-    const ws = new SockJS(`http://${environment.teleatendimentoUrl}/pi-websocket`);
+    const ws = new SockJS(`${environment.teleatendimentoUrl}/pi-websocket`);
 
     return new Observable((observable) => {
       this.stompClient = Stomp.over(ws);

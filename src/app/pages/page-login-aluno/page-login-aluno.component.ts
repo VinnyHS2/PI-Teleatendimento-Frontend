@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { WebSocketService } from 'src/app/services/web-socket.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { DataService } from 'src/app/services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-login-aluno',
@@ -12,8 +14,10 @@ export class PageLoginAlunoComponent implements OnInit {
 
 
   constructor(
-    public socketService: WebSocketService,
+    private socketService: WebSocketService,
     private formBuilder: FormBuilder,
+    private dataService: DataService,
+    private router: Router
     )
     {
 
@@ -50,4 +54,25 @@ export class PageLoginAlunoComponent implements OnInit {
   get fn() {
     return this.form.controls;
   }
+  
+  onSubmit(): void {
+
+    if (this.form.invalid) {
+      return;
+    }
+
+    this.dataService
+      .identificarAluno(this.fn['ra'].value)
+      .subscribe(
+        (data) => {
+          this.router.navigate(
+            [`espera`]
+          )
+        },
+        (err) => {
+         console.log(err)
+        }
+      )
+  }
+
 }
