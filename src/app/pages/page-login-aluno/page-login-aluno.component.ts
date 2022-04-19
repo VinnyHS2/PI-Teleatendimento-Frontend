@@ -36,17 +36,17 @@ export class PageLoginAlunoComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  conectar() {
+  conectar(ra: string) {
     this.socketService.connectSocket().subscribe({
       next: (v) => {
-        this.socketService.createSubscription('bit');
+        this.socketService.createSubscription(ra);
       },
       error: (e) => {
         console.error('!!!!!!!!!!!!!!!!!!!!!!!!!', e);
       },
       complete: () => {},
     });
-    this.socketService.onEvent('bit').subscribe((data) => {
+    this.socketService.onEvent(ra).subscribe((data) => {
       console.log('>>>>> Recebeu evento', data);
     });
   }
@@ -65,6 +65,7 @@ export class PageLoginAlunoComponent implements OnInit {
       .identificarAluno(this.fn['ra'].value)
       .subscribe(
         (data) => {
+          this.conectar(this.fn['ra'].value);
           this.router.navigate(
             [`espera`]
           )
