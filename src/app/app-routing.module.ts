@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ConectarComponent } from './components/conectar/conectar.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { EsperaComponent } from './pages/espera/espera.component';
 import { PageLoginAlunoComponent } from './pages/page-login-aluno/page-login-aluno.component';
 import { PageLoginProfessorComponent } from './pages/page-login-professor/page-login-professor.component';
+import { SelecaoComponent } from './pages/selecao/selecao.component';
 
 const routes: Routes = [
-  { path: '', component: ConectarComponent, pathMatch: 'full' },
+  { path: '', component: SelecaoComponent, pathMatch: 'full' },
   { path: 'login-aluno', component: PageLoginAlunoComponent },
   { path: 'login-professor', component: PageLoginProfessorComponent },
   { path: 'espera', component: EsperaComponent },
