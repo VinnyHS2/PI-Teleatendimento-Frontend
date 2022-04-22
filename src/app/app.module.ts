@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { EsperaComponent } from './pages/espera/espera.component';
+import { NotificacaoComponent } from './components/notificacao/notificacao.component';
 
 
 
@@ -24,7 +25,8 @@ import { EsperaComponent } from './pages/espera/espera.component';
     PageLoginAlunoComponent,
     PageLoginProfessorComponent,
     NotFoundComponent,
-    EsperaComponent
+    EsperaComponent,
+    NotificacaoComponent
   ],
   imports: [
     BrowserModule,

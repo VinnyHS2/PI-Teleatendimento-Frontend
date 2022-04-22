@@ -1,0 +1,7 @@
+<div>
+    <div *ngFor="let notificacao of notificacao" 
+        class="notificacao">
+      <div>{{notificacao.mensagem}}</div>
+      <div (click)="remover(notificacao)">x</div>
+    </div>
+  </div>
