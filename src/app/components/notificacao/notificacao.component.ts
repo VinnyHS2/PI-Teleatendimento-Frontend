@@ -15,7 +15,7 @@ export type Notificacao = {
 
 @Component({
   selector: 'app-notificacao',
-  styleUrls: ['./notificacao.component.css'],
+  styleUrls: ['./notificacao.component.scss'],
   templateUrl: './notificacao.component.html',
 })
 export class NotificacaoComponent {
