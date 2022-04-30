@@ -23,18 +23,28 @@
             padding-top: 20px;
             width: 85%;
         }
-        
-        
+
+
         .inputRA{
             padding-top: 25px;
             padding-bottom: 10px;
         }
-        
-        .buttonLoginAluno{
-            width: 140px;
-            height: 30px;
-            background: #013453;
-            border-radius: 1.4422px;
+        .buttons{
+          display: flex;
+          justify-content: space-between;
+          width: 75%;
+          .buttonLoginAluno{
+              width: 140px;
+              height: 30px;
+              background: #013453;
+              border-radius: 1.4422px;
+          }
+          .buttonVoltar{
+              width: 140px;
+              height: 30px;
+              background: #013453;
+              border-radius: 1.4422px;
+          }
         }
     }
 }

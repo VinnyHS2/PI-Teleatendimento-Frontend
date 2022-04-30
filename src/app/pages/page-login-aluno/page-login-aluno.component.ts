@@ -54,7 +54,11 @@ export class PageLoginAlunoComponent implements OnInit {
   get fn() {
     return this.form.controls;
   }
-  
+
+  voltar() {
+    this.router.navigate(['/']);
+  }
+
   onSubmit(): void {
 
     if (this.form.invalid) {

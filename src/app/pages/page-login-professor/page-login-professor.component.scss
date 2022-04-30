@@ -23,18 +23,28 @@
             padding-top: 20px;
             width: 85%;
         }
-        
-        
+
+
         .inputNome{
             padding-top: 25px;
             padding-bottom: 10px;
         }
-        
-        .buttonLoginProfessor{
+        .buttons{
+          display: flex;
+          justify-content: space-between;
+          width: 75%;
+          .buttonLoginProfessor{
             width: 140px;
             height: 30px;
             background: #013453;
             border-radius: 1.4422px;
-        }
+          }
+          .buttonVoltar{
+            width: 140px;
+            height: 30px;
+            background: #013453;
+            border-radius: 1.4422px;
+         }
+      }
     }
 }

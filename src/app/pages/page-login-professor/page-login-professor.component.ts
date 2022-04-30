@@ -54,6 +54,10 @@ export class PageLoginProfessorComponent implements OnInit {
     return this.form.controls;
   }
 
+  voltar() {
+    this.router.navigate(['/']);
+  }
+
   onSubmit(): void {
 
     if (this.form.invalid) {
