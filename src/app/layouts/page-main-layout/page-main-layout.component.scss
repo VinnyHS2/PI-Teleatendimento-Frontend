@@ -1,0 +1,14 @@
+.background {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+}
+
+.conteudo {
+    display: flex;
+    height: 100vh;    
+    align-items: center;
+    justify-content: center;
+
+}

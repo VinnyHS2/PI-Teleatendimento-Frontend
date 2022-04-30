@@ -5,32 +5,22 @@ import { DataService } from 'src/app/services/data.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-page-login-professor',
-  templateUrl: './page-login-professor.component.html',
-  styleUrls: ['./page-login-professor.component.scss']
+  selector: 'app-login-professor',
+  templateUrl: './login-professor.component.html',
+  styleUrls: ['./login-professor.component.scss'],
 })
-export class PageLoginProfessorComponent implements OnInit {
+export class LoginProfessorComponent implements OnInit {
   form: FormGroup;
-
 
   constructor(
     private socketService: WebSocketService,
     private formBuilder: FormBuilder,
     private dataService: DataService,
     private router: Router
-    )
-    {
-
+  ) {
     this.form = this.formBuilder.group({
-
-          nome: [
-            '',
-            [
-              Validators.required,
-            ],
-          ],
+      nome: ['', [Validators.required]],
     });
-
   }
 
   ngOnInit(): void {}
@@ -59,9 +49,9 @@ export class PageLoginProfessorComponent implements OnInit {
   }
 
   onSubmit(): void {
-
     if (this.form.invalid) {
       return;
     }
   }
 }
+

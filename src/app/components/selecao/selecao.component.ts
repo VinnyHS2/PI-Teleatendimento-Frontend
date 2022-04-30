@@ -4,14 +4,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-selecao',
   templateUrl: './selecao.component.html',
-  styleUrls: ['./selecao.component.scss']
+  styleUrls: ['./selecao.component.scss'],
 })
 export class SelecaoComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   redirectProfessor() {
     this.router.navigate(['/login-professor']);
@@ -19,5 +17,4 @@ export class SelecaoComponent implements OnInit {
   redirectAluno() {
     this.router.navigate(['/login-aluno']);
   }
-
 }
