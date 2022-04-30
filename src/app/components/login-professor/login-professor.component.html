@@ -1,0 +1,34 @@
+<div class="conteudoLogin">
+  <img src="assets/images/logo-UTFPR.png" class="logo" />
+
+  <form [formGroup]="form">
+    <div class="inputNome">
+      <div class="form-group">
+        <label for="nome">Seu nome <span class="text-danger">*</span></label>
+        <input
+          type="text"
+          formControlName="nome"
+          placeholder="Insira o seu nome"
+          class="form-control"
+          autofocus
+          pattern="\d*"
+          [ngClass]="{
+                        'is-invalid': fn?.['nome']?.errors && fn?.['nome']?.touched,
+                        'is-valid': !fn?.['nome']?.errors && fn?.['nome']?.touched
+                    }"
+        />
+        <div
+          *ngIf="fn?.['nome']?.errors?.['required'] && fn?.['nome']?.touched"
+          class="campo-obrigatorio"
+        >
+          O nome é obrigatório
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div class="buttons">
+    <button class="buttonVoltar" (click)="voltar()">VOLTAR</button>
+    <button class="buttonLoginProfessor" (click)="onSubmit()">ENTRAR</button>
+  </div>
+</div>
