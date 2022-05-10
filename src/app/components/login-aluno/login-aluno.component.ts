@@ -8,6 +8,8 @@ import {
 } from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
 import { Router } from '@angular/router';
+import Cookies from 'js-cookie';
+
 
 @Component({
   selector: 'app-login-aluno',
@@ -60,6 +62,7 @@ export class LoginAlunoComponent implements OnInit {
 
     this.dataService.identificarAluno(this.fn['ra'].value).subscribe(
       (data) => {
+        Cookies.set('ra', this.fn['ra'].value);
         this.conectar(this.fn['ra'].value);
         this.router.navigate([`espera`]);
       },

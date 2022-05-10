@@ -4,3 +4,18 @@
     <span class="visually-hidden">Loading...</span>
   </div>
 </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">É a sua vez</h5>
+      </div>
+      <div class="modal-body">
+        Você foi chamado para inicar o atendimento, deseja entrar?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="desconectar()">Não</button>
+        <button type="button" class="btn btn-primary" (click)="conectar()">Sim</button>
+      </div>
+    </div>
+  </div>
