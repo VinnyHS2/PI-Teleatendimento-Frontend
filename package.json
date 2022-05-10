@@ -26,11 +26,14 @@
     "@types/stompjs": "^2.3.5",
     "bootstrap": "^5.1.3",
     "js-cookie": "^3.0.1",
+    "jquery": "^3.6.0",
     "net": "^1.0.2",
+    "popper.js": "^1.16.1",
     "rxjs": "~7.4.0",
     "sockjs-client": "^1.6.0",
     "stompjs": "^2.3.3",
     "tslib": "^2.3.0",
+    "uuid": "^8.3.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -38,6 +41,7 @@
     "@angular/cli": "~13.1.3",
     "@angular/compiler-cli": "~13.1.0",
     "@types/jasmine": "~3.10.0",
+    "@types/jquery": "^3.5.14",
     "@types/node": "^12.11.1",
     "jasmine-core": "~3.10.0",
     "karma": "~6.3.0",
