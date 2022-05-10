@@ -23,6 +23,21 @@ export class DataService {
         })
       );
   }
+  sairFila(ra: String): any {
+    var json = {
+      ra: ra
+    }
+
+    return this.http
+      .post<any>(`${environment.teleatendimentoUrl}/fila/sair`, json)
+      .pipe(
+        retry(3),
+        map((data) => {
+          return data;
+        })
+      )
+
+  }
 
   chamarProximo(idSala: String): any {
     var json = {
