@@ -16,7 +16,7 @@ Um software para atendimento remoto de clientes
 	- Node Package Manager (npm)
 	- Angular CLI 13
 	
-### Instruções para download:
+### Instruções para download: 
 Para rodar o frontend, deve-se primeiro instalar todas as dependências.
 	
   - npm install
