@@ -15,6 +15,9 @@ import { PageMainLayoutComponent } from './layouts/page-main-layout/page-main-la
 import { EsperaComponent } from './components/espera/espera.component';
 import { SelecaoComponent } from './components/selecao/selecao.component';
 import { MeetVideoComponent } from './components/meet-video/meet-video.component';
+import { TeleatendimentoLayoutComponent } from './layouts/teleatendimento-layout/teleatendimento-layout.component';
+import { TeleatendimentoProfessorComponent } from './components/teleatendimento-professor/teleatendimento-professor.component';
+import { TeleatendimentoAlunoComponent } from './components/teleatendimento-aluno/teleatendimento-aluno.component';
 
 
 
@@ -33,6 +36,9 @@ import { MeetVideoComponent } from './components/meet-video/meet-video.component
     LoginAlunoComponent,
     LoginProfessorComponent,
     MeetVideoComponent,
+    TeleatendimentoLayoutComponent,
+    TeleatendimentoProfessorComponent,
+    TeleatendimentoAlunoComponent,
   ],
   imports: [
     BrowserModule,

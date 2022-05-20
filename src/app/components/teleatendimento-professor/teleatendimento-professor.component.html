@@ -1,0 +1,70 @@
+
+<div class="row">
+
+    <div class="col-8">
+        <div class="div-esquerda">
+            <div class="logoUTFPR">
+                <img src="assets/images/logo-UTFPR.png" class="logo" />
+            </div>
+            <div class="msg">
+                Atendimento remoto UTFPR !!
+            </div>
+            <div class="video">
+                <app-meet-video [isProfessor] = true [nome] = nomeProfessor > </app-meet-video>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <div class="div-direita">
+            <button
+            class= "atend"
+            >
+                SAIR
+            </button>
+
+            <div class="informacoes-laterais">
+                <div class="bloco-atendendo">
+                    <div class="card card-atendendo">
+                        <div class="card-header text-center">Bem-Vindo Professor:</div>
+                        <div class="conteudo-atendendo">
+                            <div class="fila">
+                                <span>{{ nomeProfessor }}</span>
+                                <h2>Girafales</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="atendimento">
+                    <div class="card card-atendendo">
+                        <div id="header" class="card-header text-center">
+                        Quantidade de alunos em espera
+                        </div>
+                
+                        <div class="bloco-quantidade-fila">
+                            <div id="contador">
+                                <h2>5</h2>
+                            </div>
+                        </div>
+              
+                        <div id="div-botoes">
+                            <button
+                            class="atend-chamar-encerrar"
+                            >
+                            chamar próximo
+                            </button>
+                
+                            <button
+                            class="atend-chamar-encerrar"
+                            >
+                            encerrar atendimento
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+ </div>
+ 
