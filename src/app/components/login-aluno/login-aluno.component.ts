@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { WebSocketService } from 'src/app/services/web-socket.service';
 import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
+  FormBuilder, FormGroup,
+  Validators
 } from '@angular/forms';
-import { DataService } from 'src/app/services/data.service';
 import { Router } from '@angular/router';
 import Cookies from 'js-cookie';
+import { DataService } from 'src/app/services/data.service';
+import { WebSocketService } from 'src/app/services/web-socket.service';
 
 
 @Component({
@@ -64,6 +62,7 @@ export class LoginAlunoComponent implements OnInit {
       (data) => {
         Cookies.set('ra', this.fn['ra'].value);
         this.conectar(this.fn['ra'].value);
+        this.dataService.setPosicao(data.posicao);
         this.router.navigate([`espera`]);
       },
       (err) => {
