@@ -9,6 +9,8 @@ import { environment } from 'src/environments/environment';
 export class DataService {
   constructor(private http: HttpClient) {}
 
+  posicaoAluno: number = 0;
+
   identificarAluno(ra: String): any {
     var json = {
       ra: ra,
@@ -53,5 +55,13 @@ export class DataService {
         })
       );
   }
+
+  setPosicao(posicao) {
+    this.posicaoAluno = posicao;
+  }
+  getPosicao(): number {
+    return this.posicaoAluno;
+  }
+
 }
 

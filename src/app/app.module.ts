@@ -15,6 +15,7 @@ import { PageMainLayoutComponent } from './layouts/page-main-layout/page-main-la
 import { EsperaComponent } from './components/espera/espera.component';
 import { SelecaoComponent } from './components/selecao/selecao.component';
 import { MeetVideoComponent } from './components/meet-video/meet-video.component';
+import { ContadorFilaComponent } from './components/contador-fila/contador-fila.component';
 
 
 
@@ -33,6 +34,7 @@ import { MeetVideoComponent } from './components/meet-video/meet-video.component
     LoginAlunoComponent,
     LoginProfessorComponent,
     MeetVideoComponent,
+    ContadorFilaComponent,
   ],
   imports: [
     BrowserModule,

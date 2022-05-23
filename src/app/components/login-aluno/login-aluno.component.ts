@@ -64,6 +64,7 @@ export class LoginAlunoComponent implements OnInit {
       (data) => {
         Cookies.set('ra', this.fn['ra'].value);
         this.conectar(this.fn['ra'].value);
+        this.dataService.setPosicao(data.posicao);
         this.router.navigate([`espera`]);
       },
       (err) => {
