@@ -18,6 +18,7 @@ import { MeetVideoComponent } from './components/meet-video/meet-video.component
 import { TeleatendimentoLayoutComponent } from './layouts/teleatendimento-layout/teleatendimento-layout.component';
 import { TeleatendimentoProfessorComponent } from './components/teleatendimento-professor/teleatendimento-professor.component';
 import { TeleatendimentoAlunoComponent } from './components/teleatendimento-aluno/teleatendimento-aluno.component';
+import { ContadorFilaComponent } from './components/contador-fila/contador-fila.component';
 
 
 
@@ -39,6 +40,7 @@ import { TeleatendimentoAlunoComponent } from './components/teleatendimento-alun
     TeleatendimentoLayoutComponent,
     TeleatendimentoProfessorComponent,
     TeleatendimentoAlunoComponent,
+    ContadorFilaComponent,
   ],
   imports: [
     BrowserModule,
