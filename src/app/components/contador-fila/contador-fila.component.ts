@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import Cookies from 'js-cookie';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({

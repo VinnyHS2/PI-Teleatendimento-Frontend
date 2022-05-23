@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { WebSocketService } from 'src/app/services/web-socket.service';
 import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
+  FormBuilder, FormGroup,
+  Validators
 } from '@angular/forms';
-import { DataService } from 'src/app/services/data.service';
 import { Router } from '@angular/router';
 import Cookies from 'js-cookie';
+import { DataService } from 'src/app/services/data.service';
+import { WebSocketService } from 'src/app/services/web-socket.service';
 
 
 @Component({
