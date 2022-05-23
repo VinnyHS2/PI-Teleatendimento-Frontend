@@ -16,6 +16,7 @@ import { EsperaComponent } from './components/espera/espera.component';
 import { SelecaoComponent } from './components/selecao/selecao.component';
 import { MeetVideoComponent } from './components/meet-video/meet-video.component';
 import { ContadorFilaComponent } from './components/contador-fila/contador-fila.component';
+import { QuantidadeEsperaComponent } from './components/quantidade-espera/quantidade-espera.component';
 
 
 
@@ -35,6 +36,7 @@ import { ContadorFilaComponent } from './components/contador-fila/contador-fila.
     LoginProfessorComponent,
     MeetVideoComponent,
     ContadorFilaComponent,
+    QuantidadeEsperaComponent,
   ],
   imports: [
     BrowserModule,

@@ -27,8 +27,8 @@ export class DataService {
   }
   sairFila(ra: String): any {
     var json = {
-      ra: ra
-    }
+      ra: ra,
+    };
 
     return this.http
       .post<any>(`${environment.teleatendimentoUrl}/fila/sair`, json)
@@ -37,8 +37,7 @@ export class DataService {
         map((data) => {
           return data;
         })
-      )
-
+      );
   }
 
   chamarProximo(idSala: String): any {
@@ -63,5 +62,16 @@ export class DataService {
     return this.posicaoAluno;
   }
 
+  quantidadeFila(): any {
+    return this.http
+      .get<any>(`${environment.teleatendimentoUrl}/fila/quantidade`)
+      .pipe(
+        retry(3),
+        map((data) => {
+          console.log("Quantidade de pessoas na fila: ", data);
+          return data.quantidade;
+        })
+      );
+  }
 }
 
