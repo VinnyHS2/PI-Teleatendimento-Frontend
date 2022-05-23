@@ -19,6 +19,7 @@ import { TeleatendimentoLayoutComponent } from './layouts/teleatendimento-layout
 import { TeleatendimentoProfessorComponent } from './components/teleatendimento-professor/teleatendimento-professor.component';
 import { TeleatendimentoAlunoComponent } from './components/teleatendimento-aluno/teleatendimento-aluno.component';
 import { ContadorFilaComponent } from './components/contador-fila/contador-fila.component';
+import { QuantidadeEsperaComponent } from './components/quantidade-espera/quantidade-espera.component';
 
 
 
@@ -41,6 +42,7 @@ import { ContadorFilaComponent } from './components/contador-fila/contador-fila.
     TeleatendimentoProfessorComponent,
     TeleatendimentoAlunoComponent,
     ContadorFilaComponent,
+    QuantidadeEsperaComponent,
   ],
   imports: [
     BrowserModule,
