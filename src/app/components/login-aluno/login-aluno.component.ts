@@ -34,6 +34,7 @@ export class LoginAlunoComponent implements OnInit {
     this.socketService.connectSocket().subscribe({
       next: (v) => {
         this.socketService.createSubscription(ra);
+        this.dataService.setRA(ra);
       },
       error: (e) => {
         console.error('!!!!!!!!!!!!!!!!!!!!!!!!!', e);

@@ -1,10 +1,11 @@
 .div-esquerda {
-    height: 100vh;
-    width: 70%;
+    height: 70%;
+    width: 100%;
+    margin-left: 1%;
 
     .logoUTFPR{
-        width: 30%;
-        padding: 15px;
+        width: 25%;
+        padding: 20px;
         .logo{
             width: 100%;    
         }
@@ -22,13 +23,17 @@
       }
 
     .video {
-        position: relative;
-        margin: 0 2% ;
+      position: relative;
+      top: 3%;
+      height: 100%;
+      width: 100%;
+      margin: 0 1%;
     }
-}
 
+  }
+    
 .div-direita{
-    height: 140vh;
+    height: 100vh;
 
     button.atend{
         float: right;
@@ -45,7 +50,7 @@
 
     .informacoes-laterais {
         position: relative;
-        top: 12%;
+        top: 15%;
     
         .bloco-atendendo {
           width: 95%;
@@ -107,6 +112,10 @@
           font-size: 1rem;
           text-transform: uppercase;
           color: #103463;
+        }
+        .contador{
+          display: flex;
+          justify-content: center;
         }
       }
       #div-botoes {

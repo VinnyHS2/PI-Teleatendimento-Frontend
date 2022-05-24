@@ -10,15 +10,16 @@
                 Atendimento remoto UTFPR !!
             </div>
             <div class="video">
-                <app-meet-video [isProfessor] = true [nome] = nomeProfessor > </app-meet-video>
+                <!-- <img src="assets/images/SemVideo.png" class="noVideo." />  -->
             </div>
-        </div>
+        </div>    
     </div>
 
     <div class="col-4">
         <div class="div-direita">
             <button
             class= "atend"
+            (click) = "sair()"
             >
                 SAIR
             </button>
@@ -29,8 +30,7 @@
                         <div class="card-header text-center">Bem-Vindo Professor:</div>
                         <div class="conteudo-atendendo">
                             <div class="fila">
-                                <span>{{ nomeProfessor }}</span>
-                                <h2>Girafales</h2>
+                                <span>{{ professor }}</span>
                             </div>
                         </div>
                     </div>
@@ -43,14 +43,15 @@
                         </div>
                 
                         <div class="bloco-quantidade-fila">
-                            <div id="contador">
-                                <h2>5</h2>
+                            <div class = "contador">
+                                <app-contador-fila></app-contador-fila>
                             </div>
                         </div>
               
                         <div id="div-botoes">
                             <button
                             class="atend-chamar-encerrar"
+                            (click) = "chamarProximo()"
                             >
                             chamar próximo
                             </button>

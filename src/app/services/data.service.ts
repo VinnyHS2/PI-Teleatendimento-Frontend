@@ -10,6 +10,35 @@ export class DataService {
   constructor(private http: HttpClient) {}
 
   posicaoAluno: number = 0;
+  ra = ""
+  idSala = ""
+  nomeProfessor = ""
+
+
+  getRA(): string {
+    return this.ra
+  }
+
+  setRA(ra: string) {
+    this.ra = ra;
+  }
+
+  getIdSala(): string {
+    return this.idSala
+  }
+
+  setIdSala(idSala: string) {
+    this.idSala = idSala;
+  }
+  
+  setNomeProfessor(nomeProfessor: string){
+    this.nomeProfessor = nomeProfessor;
+  }
+
+  getNomeProfessor(){
+    return this.nomeProfessor;
+  }
+
 
   identificarAluno(ra: String): any {
     var json = {
