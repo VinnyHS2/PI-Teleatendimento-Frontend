@@ -19,6 +19,7 @@ export class EsperaComponent implements OnInit {
     ) {
       this.eventObs = this.socketService.onEvent('iniciar').subscribe((data) => {
         var myModal = new Modal(document.getElementById('exampleModal'));
+        this.dataService.setIdSala(data as string);
         myModal.show();
     });
   }
@@ -28,7 +29,7 @@ export class EsperaComponent implements OnInit {
     this.eventObs.unsubscribe();
     var myModal = new Modal(document.getElementById('exampleModal'));
     myModal.hide();
-    this.router.navigate(['/atendimento']);
+    this.router.navigate(['/atendimento/aluno']);
   }
   desconectar() {
     this.eventObs.unsubscribe();

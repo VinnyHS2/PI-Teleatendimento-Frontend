@@ -52,6 +52,9 @@ export class LoginProfessorComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
+    this.dataService.setNomeProfessor(this.fn['nome'].value);
+    this.router.navigate(['/atendimento/professor'])
+
   }
 }
 
