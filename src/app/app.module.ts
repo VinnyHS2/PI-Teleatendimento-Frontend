@@ -19,6 +19,7 @@ import { TeleatendimentoAlunoComponent } from './components/teleatendimento-alun
 import { TeleatendimentoProfessorComponent } from './components/teleatendimento-professor/teleatendimento-professor.component';
 import { PageMainLayoutComponent } from './layouts/page-main-layout/page-main-layout.component';
 import { TeleatendimentoLayoutComponent } from './layouts/teleatendimento-layout/teleatendimento-layout.component';
+import { AvaliacaoAtendimentoComponent } from './components/avaliacao-atendimento/avaliacao-atendimento.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { TeleatendimentoLayoutComponent } from './layouts/teleatendimento-layout
     TeleatendimentoAlunoComponent,
     ContadorFilaComponent,
     QuantidadeEsperaComponent,
+    AvaliacaoAtendimentoComponent,
   ],
   imports: [
     BrowserModule,
