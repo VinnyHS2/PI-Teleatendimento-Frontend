@@ -9,6 +9,7 @@ import { SelecaoComponent } from './components/selecao/selecao.component';
 import { TeleatendimentoLayoutComponent } from './layouts/teleatendimento-layout/teleatendimento-layout.component';
 import { TeleatendimentoProfessorComponent } from './components/teleatendimento-professor/teleatendimento-professor.component';
 import { TeleatendimentoAlunoComponent } from './components/teleatendimento-aluno/teleatendimento-aluno.component';
+import { AvaliacaoAtendimentoComponent } from './components/avaliacao-atendimento/avaliacao-atendimento.component';
 
 const routes: Routes = [
   { path: '', component: PageMainLayoutComponent, 
@@ -24,6 +25,8 @@ const routes: Routes = [
       children:[
         {path: 'professor', component: TeleatendimentoProfessorComponent },
         {path: 'aluno', component: TeleatendimentoAlunoComponent},
+        {path: 'avaliacao', component: AvaliacaoAtendimentoComponent},
+
       ],
     },
     { path: '**', component: NotFoundComponent }, 
