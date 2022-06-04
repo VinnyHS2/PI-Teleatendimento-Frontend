@@ -12,7 +12,7 @@
             <div class="video">
                 <!-- <img src="assets/images/SemVideo.png" class="noVideo." />  -->
             </div>
-        </div>    
+        </div>
     </div>
 
     <div class="col-4">
@@ -41,13 +41,13 @@
                         <div id="header" class="card-header text-center">
                         Quantidade de alunos em espera
                         </div>
-                
+
                         <div class="bloco-quantidade-fila">
                             <div class = "contador">
                                 <app-contador-fila></app-contador-fila>
                             </div>
                         </div>
-              
+
                         <div id="div-botoes">
                             <button
                             class="atend-chamar-encerrar"
@@ -55,9 +55,10 @@
                             >
                             chamar próximo
                             </button>
-                
+
                             <button
                             class="atend-chamar-encerrar"
+                            (click) = "encerrarAtendimento()"
                             >
                             encerrar atendimento
                             </button>
@@ -68,4 +69,4 @@
         </div>
      </div>
  </div>
- 
+
