@@ -25,6 +25,7 @@ export class TeleatendimentoProfessorComponent implements OnInit {
     this.professor = this.dataService.getNomeProfessor();
     this.eventObs = this.socketService.onEvent('finalizar-aluno').subscribe((data) => {
       this.videoService.hangup();
+      this.socketService.disconnect().subscribe();
       this.notificationService.showInfo(
         'O aluno finalizou o atendimento.'
       );
@@ -68,6 +69,8 @@ export class TeleatendimentoProfessorComponent implements OnInit {
 
   encerrarAtendimento() {
     this.videoService.hangup();
+    this.socketService.disconnect().subscribe();
+
     //TODO: Chamar endpoint para avisar o aluno que o professor encerrou o atendimento
   }
 
