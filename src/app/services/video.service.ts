@@ -5,33 +5,41 @@ import * as $ from 'jquery';
 declare var JitsiMeetExternalAPI: any;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class VideoService {
-
   private videoApi: any;
   private videoApiAluno: any;
   private _domain = 'meet.jit.si';
   private _option = {
-    roomName: "",
-    width: "100%",
-    height: "100%",
-    configOverwrite: { prejoinPageEnabled: false },
+    roomName: '',
+    width: '100%',
+    height: '100%',
+    configOverwrite: {
+      prejoinPageEnabled: false,
+      toolbarButtons: [
+        'microphone',
+        'camera',
+        'filmstrip',
+        'toggle-camera',
+        'fullscreen',
+        'chat',
+        'raisehand',
+        'select-background',
+        'desktop',
+      ],
+    },
     interfaceConfigOverwrite: {
       // overwrite interface properties
     },
     parentNode: document.querySelector('.video'),
     userInfo: {
-      displayName: "",
+      displayName: '',
     },
-  }
+  };
 
-
-  joinSession(
-    professor: string,
-    roomName: string,
-  ): Observable<boolean> {
-    if (this.videoApi != null){
+  joinSession(professor: string, roomName: string): Observable<boolean> {
+    if (this.videoApi != null) {
       $('.video').html('');
       this.hangup();
     }
@@ -39,7 +47,7 @@ export class VideoService {
     return new Observable((observable) => {
       this._option.roomName = roomName;
       this._option.parentNode = document.querySelector('.video');
-      this._option.userInfo.displayName = professor; 
+      this._option.userInfo.displayName = professor;
       this.videoApi = new JitsiMeetExternalAPI(this._domain, this._option);
 
       this.videoApi.addEventListeners({
@@ -50,26 +58,23 @@ export class VideoService {
         videoConferenceLeft: this.handleVideoConferenceLeft,
         audioMuteStatusChanged: this.handleMuteStatus,
         videoMuteStatusChanged: this.handleVideoStatus,
-      })
+      });
 
       observable.next(true);
       observable.complete();
-    })
+    });
   }
 
-  joinSessionAluno(
-    aluno: string,
-    roomName: string,
-  ): Observable<boolean> {
-    if (this.videoApiAluno != null){
+  joinSessionAluno(aluno: string, roomName: string): Observable<boolean> {
+    if (this.videoApiAluno != null) {
       $('.video').html('');
-      this.hangup();
+      this.hangupAluno();
     }
 
     return new Observable((observable) => {
       this._option.roomName = roomName;
       this._option.parentNode = document.querySelector('.video');
-      this._option.userInfo.displayName = aluno; 
+      this._option.userInfo.displayName = aluno;
       this.videoApiAluno = new JitsiMeetExternalAPI(this._domain, this._option);
 
       this.videoApiAluno.addEventListeners({
@@ -80,11 +85,11 @@ export class VideoService {
         videoConferenceLeft: this.handleVideoConferenceLeft,
         audioMuteStatusChanged: this.handleMuteStatus,
         videoMuteStatusChanged: this.handleVideoStatus,
-      })
+      });
 
       observable.next(true);
       observable.complete();
-    })
+    });
   }
 
   handleClose = () => {
@@ -132,10 +137,15 @@ export class VideoService {
 
     this.unload();
   }
+  hangupAluno(): any {
+    this.videoApiAluno.executeCommand('hangup');
+
+    this.unload();
+  }
 
   unload() {
     $('.video').html('');
   }
 
-  constructor() { }
+  constructor() {}
 }
