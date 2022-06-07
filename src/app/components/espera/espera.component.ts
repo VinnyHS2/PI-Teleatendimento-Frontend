@@ -36,6 +36,7 @@ export class EsperaComponent implements OnInit {
     var myModal = new Modal(document.getElementById('exampleModal'));
     myModal.hide();
     this.dataService.sairFila(Cookies.get('ra')).subscribe();
+    this.dataService.finalizarAluno(Cookies.get('ra')).subscribe();
     this.router.navigate(['/']);
   }
 }
