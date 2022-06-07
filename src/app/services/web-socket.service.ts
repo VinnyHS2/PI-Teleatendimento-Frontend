@@ -126,6 +126,18 @@ export class WebSocketService {
     return observableForThisSubscription;
   }
 
+  public cancelSubscription(topic: string): void {
+    topic = `/${topic}`;
+
+    if (this.subscriptions.has(topic)) {
+        this.subscriptions.get(topic)!.unsubscribe();
+
+      this.subscriptions.delete(topic);
+    }
+
+    // this.persisteTopics();
+  }
+
   public disconnect(): Observable<boolean> {
     return new Observable((observable) => {
       //Remove todos os topicos ativos
