@@ -25,20 +25,17 @@ export class LoginProfessorComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // conectar(nome: string) {
-  //   this.socketService.connectSocket().subscribe({
-  //     next: (v) => {
-  //       this.socketService.createSubscription(nome);
-  //     },
-  //     error: (e) => {
-  //       console.error('!!!!!!!!!!!!!!!!!!!!!!!!!', e);
-  //     },
-  //     complete: () => {},
-  //   });
-  //   this.socketService.onEvent(nome).subscribe((data) => {
-  //     console.log('>>>>> Recebeu evento', data);
-  //   });
-  // }
+  conectar() {
+    this.socketService.connectSocket().subscribe({
+      next: (v) => {
+        this.socketService.createSubscription("fila");
+      },
+      error: (e) => {
+        console.error('!!!!!!!!!!!!!!!!!!!!!!!!!', e);
+      },
+      complete: () => {},
+    });
+  }
 
   get fn() {
     return this.form.controls;
@@ -52,6 +49,7 @@ export class LoginProfessorComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
+    this.conectar();
     this.dataService.setNomeProfessor(this.fn['nome'].value);
     this.router.navigate(['/atendimento/professor'])
 

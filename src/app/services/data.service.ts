@@ -30,7 +30,7 @@ export class DataService {
   setIdSala(idSala: string) {
     this.idSala = idSala;
   }
-  
+
   setNomeProfessor(nomeProfessor: string){
     this.nomeProfessor = nomeProfessor;
   }
@@ -97,8 +97,7 @@ export class DataService {
       .pipe(
         retry(3),
         map((data) => {
-          console.log("Quantidade de pessoas na fila: ", data);
-          return data.quantidade;
+          return data;
         })
       );
   }

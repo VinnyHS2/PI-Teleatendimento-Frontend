@@ -15,6 +15,7 @@ export class TeleatendimentoProfessorComponent implements OnInit {
   professor: string = ' ';
   aluno: string = ' ';
   eventObs: any;
+  teste: boolean = true;
   constructor(
     private videoService: VideoService,
     private dataService: DataService,
@@ -23,13 +24,13 @@ export class TeleatendimentoProfessorComponent implements OnInit {
     private socketService: WebSocketService
   ) {
     this.professor = this.dataService.getNomeProfessor();
-    this.eventObs = this.socketService.onEvent('finalizar-aluno').subscribe((data) => {
-      this.videoService.hangup();
-      this.socketService.disconnect().subscribe();
-      this.notificationService.showInfo(
-        'O aluno finalizou o atendimento.'
-      );
-    });
+    this.eventObs = this.socketService
+      .onEvent('finalizar-aluno')
+      .subscribe((data) => {
+        this.videoService.hangup();
+        this.socketService.cancelSubscription(this.aluno);
+        this.notificationService.showInfo('O aluno finalizou o atendimento.');
+      });
   }
   chamarProximo(): void {
     let nameRoom = uuid.v4();
@@ -38,17 +39,8 @@ export class TeleatendimentoProfessorComponent implements OnInit {
       next: (data) => {
         this.dataService.chamarProximo(nameRoom).subscribe({
           next: (data) => {
-            this.socketService.connectSocket().subscribe({
-              next: (v) => {
-                this.socketService.createSubscription(data.ra);
-                this.aluno = data.ra;
-              },
-              error: (e) => {
-                this.notificationService.showError(
-                  ' Erro ao conectar no socket.'
-                );
-              },
-            });
+            this.socketService.createSubscription(data.ra);
+            this.aluno = data.ra;
           },
           error: (error) => {
             this.notificationService.showError(
@@ -70,7 +62,7 @@ export class TeleatendimentoProfessorComponent implements OnInit {
 
   encerrarAtendimento() {
     this.videoService.hangup();
-    this.socketService.disconnect().subscribe();
+    this.socketService.cancelSubscription(this.aluno);
     this.dataService.finalizarProfessor(this.aluno).subscribe();
   }
 
