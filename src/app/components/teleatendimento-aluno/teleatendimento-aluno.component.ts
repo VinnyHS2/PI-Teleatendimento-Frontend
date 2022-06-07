@@ -35,9 +35,9 @@ export class TeleatendimentoAlunoComponent implements OnInit {
 
 
   sair(){
-    // TODO: chamar endpoint para avisar o professor que o aluno saiu
     this.videoService.hangupAluno();
     this.socketService.disconnect().subscribe();
+    this.dataService.finalizarAluno(this.aluno).subscribe();
     this.router.navigate(['/atendimento/avaliacao']);
   }
 
