@@ -102,5 +102,29 @@ export class DataService {
         })
       );
   }
+
+  finalizarAluno(ra): any {
+    var json = {
+      ra: ra
+    };
+    return this.http
+      .post<any>(`${environment.teleatendimentoUrl}/atendimento/sair-aluno`, json)
+      .pipe(
+        retry(3)
+      );
+  }
+
+  finalizarProfessor(ra): any {
+    var json = {
+      ra: ra
+    };
+    console.log("Finalizando professor");
+    return this.http
+      .post<any>(`${environment.teleatendimentoUrl}/atendimento/sair-professor`, json)
+      .pipe(
+        retry(3)
+      );
+  }
+
 }
 
