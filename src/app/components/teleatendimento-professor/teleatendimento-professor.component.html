@@ -1,72 +1,89 @@
+<div id="sticker" class="header-area hidden-xs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="imgUTFPR">
+                                        <img src="assets/images/logo-UTFPR.png" class="logo" />
+                                    </div>
+                                </div>
+                                <div class="col-md-9 col-sm-9">
+                                    <div class="nameProfessor">
+                                        <div class="msgProfessor">
+                                            Bem-Vindo Professor(a):
+                                        </div>
+                                        <div class="fila">
+                                            <span>{{ professor }}</span>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="buttonLeave">
+                                        <button
+                                            class= "atend"
+                                            (click) = "sair()"
+                                            >
+                                            SAIR
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</div>
 
+    
 <div class="row">
-
-    <div class="col-8">
-        <div class="div-esquerda">
-            <div class="logoUTFPR">
-                <img src="assets/images/logo-UTFPR.png" class="logo" />
-            </div>
-            <div class="msg">
-                Atendimento remoto UTFPR !!
-            </div>
+    <div class="col-md-8 offset-md-2">
+        <div class="tamVideo">
             <div class="video">
-                <!-- <img src="assets/images/SemVideo.png" class="noVideo." />  -->
+                
             </div>
         </div>
     </div>
-
-    <div class="col-4">
-        <div class="div-direita">
-            <button
-            class= "atend"
-            (click) = "sair()"
-            >
-                SAIR
-            </button>
-
-            <div class="informacoes-laterais">
-                <div class="bloco-atendendo">
-                    <div class="card card-atendendo">
-                        <div class="card-header text-center">Bem-Vindo Professor:</div>
-                        <div class="conteudo-atendendo">
-                            <div class="fila">
-                                <span>{{ professor }}</span>
-                            </div>
-                        </div>
-                    </div>
+    <div class="col-md-2">
+        <div class="direita">
+    
+            <p>
+                <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+                        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+                  Collapse Toggle
+                </button>
+              </p>
+              <div id="collapseExample" [ngbCollapse]="isCollapsed">
+                <div class="card">
+                  <div class="card-body">
+                    You can collapse this card by clicking Toggle Button. This is example from ItSolutionStuff.com.
+                  </div>
                 </div>
+              </div>
 
-                <div id="atendimento">
-                    <div class="card card-atendendo">
-                        <div id="header" class="card-header text-center">
-                        Quantidade de alunos em espera
-                        </div>
-
-                        <div class="bloco-quantidade-fila">
-                            <div class = "contador">
-                                <app-contador-fila [isProfessor]="teste"></app-contador-fila>
-                            </div>
-                        </div>
-
-                        <div id="div-botoes">
-                            <button
-                            class="atend-chamar-encerrar"
-                            (click) = "chamarProximo()"
-                            >
-                            chamar próximo
-                            </button>
-
-                            <button
-                            class="atend-chamar-encerrar"
-                            (click) = "encerrarAtendimento()"
-                            >
-                            encerrar atendimento
-                            </button>
-                        </div>
-                    </div>
+            <!-- <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                click here
+            </a>
+            <div class="collapse" id="collapseExample">
+                <div id="div-botoes">
+                    <button
+                    class="atend-chamar-encerrar"
+                    (click) = "chamarProximo()"
+                    >
+                    Chamar Próximo
+                    </button>
+                
+                    <button
+                    class="atend-chamar-encerrar"
+                    (click) = "encerrarAtendimento()"
+                    >
+                    Encerrar Atendimento
+                    </button>
                 </div>
             </div>
-        </div>
-     </div>
- </div>
+        </div> -->
+        
+        
+        
 
+                
+    </div>
+</div>

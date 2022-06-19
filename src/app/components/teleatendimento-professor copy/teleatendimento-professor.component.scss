@@ -1,0 +1,177 @@
+.div-esquerda {
+    height: 70%;
+    width: 100%;
+    margin-left: 1%;
+
+    .logoUTFPR{
+        width: 25%;
+        padding: 20px;
+        .logo{
+            width: 100%;    
+        }
+    }
+
+    .msg {
+        position: relative;
+        left: 20px;
+        width: 80%;
+        font-family: "Arial";
+        font-size: 130%;
+        color: #000000;
+        letter-spacing: 1px;
+      }
+
+    .video {
+      position: relative;
+      top: 3%;
+      height: 100%;
+      width: 100%;
+      margin: 0 1%;
+    }
+
+  }
+    
+.div-direita{
+    height: 100vh;
+
+    button.atend{
+        float: right;
+        width: 15%;
+        margin: 1%;
+        height: 2.5rem;
+        font-family: Poppins-Bold;
+        font-size: 1rem;
+        background-color: #ca2222;
+        color: #ffffff;
+        border-radius: 10px;
+    }
+
+    .informacoes-laterais {
+        position: relative;
+        top: 15%;
+    
+        .bloco-atendendo {
+          width: 95%;
+          margin: 0 auto;
+          border-radius: 20px;
+          display: flex;
+          flex-direction: column;
+          .card-atendendo {
+            border: 2px solid #a1c3e1;
+            border-radius: 20px !important;
+            .card-header {
+              color: #103463;
+              background-color: #a1c3e1;
+              font-size: 1rem;
+              border-radius: 15px 15px 0 0;
+              font-family: "Arial";
+              padding: 1%;
+            }
+            .card-body {
+              color: #00bcd8;
+              font-size: 2rem;
+              font-family: "Arial";
+              padding: 15px;
+              border-radius: 15px !important;
+            }
+          }
+        }
+    #atendimento {
+      border: 2px solid #a1c3e1;
+      border-radius: 20px;
+      background-color: #fff;
+      width: 95%;
+      margin: 3% auto;
+      padding-bottom: 1.5%;
+      font-family: "Arial";
+
+      .card {
+        border: none !important;
+        border-radius: 15px !important;
+      }
+
+      #header {
+        width: 100%;
+        background-color: #a1c3e1;
+        font-size: 1rem;
+        color: #103463;
+        padding: 1%;
+        text-align: center;
+        border-radius: 14px 14px 0px 0px;
+      }
+
+      .bloco-quantidade-fila {
+        text-align: center;
+        line-height: 1rem;
+        .frase-quantidade-fila {
+          font-size: 1rem;
+          color: #103463;
+        }
+        .contador{
+          display: flex;
+          justify-content: center;
+        }
+      }
+      #div-botoes {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        padding: 2%;
+        border: 3px solid #a1c3e1;
+        background-color: #a1c3e1;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: -8px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+
+        button.atend {
+          font-size: 0.8rem;
+          width: 36%;
+          background-color: #ffffff;
+          color: #103463;
+          padding: 1%;
+          border-radius: 10px;
+          margin: 0% 3%;
+          line-height: 1rem;
+        }
+
+        button.atend-chamar-encerrar {
+          font-size: 0.8rem;
+          width: 36%;
+          background-color: #fff;
+          color: #103463;
+          padding: 1%;
+          border-radius: 10px;
+          margin: 0 3%;
+          line-height: 1rem;
+          color: #fff;
+          border-color: #fff;
+          background-color: #00bbd6;
+          border: 1px solid #fff;
+          cursor: pointer;
+
+          &:disabled {
+            cursor: not-allowed;
+            color: #000;
+            background-color: #a0a0a0;
+            border-color: #a0a0a0;
+          }
+        }
+      }
+    }
+    }
+    
+    .fila {
+        text-align: center;
+        font-family: Poppins-Bold;
+        font-size: 1.3rem;
+        width: 100%;
+        margin: 0 auto;
+        color: #000000;
+        line-height: 1.6rem;
+        letter-spacing: 0.05rem;
+        padding: 2% 3%;
+      }
+}

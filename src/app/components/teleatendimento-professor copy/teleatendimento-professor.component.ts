@@ -32,10 +32,6 @@ export class TeleatendimentoProfessorComponent implements OnInit {
         this.notificationService.showInfo('O aluno finalizou o atendimento.');
       });
   }
-
-  public isCollapsed = false;
-
-
   chamarProximo(): void {
     let nameRoom = uuid.v4();
 
