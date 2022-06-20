@@ -16,15 +16,6 @@
                                         <div class="fila">
                                             <span>{{ professor }}</span>
                                         </div>
-                                        
-                                    </div>
-                                    <div class="buttonLeave">
-                                        <button
-                                            class= "atend"
-                                            (click) = "sair()"
-                                            >
-                                            SAIR
-                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -37,29 +28,24 @@
 <div class="row">
     <div class="col-md-8 offset-md-2">
         <div class="tamVideo">
-            <div class="video">
-                
+            <div class="video" >
+                <img src="assets\images\SemVideo.png" class="imgVideo" *ngIf="videoImg == true" />
             </div>
         </div>
     </div>
     <div class="col-md-2">
         <div class="direita">
-    
-            <p>
-                <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
-                        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
-                  Collapse Toggle
-                </button>
-              </p>
-              <div id="collapseExample" [ngbCollapse]="isCollapsed">
-                <div class="card">
-                  <div class="card-body">
-                    You can collapse this card by clicking Toggle Button. This is example from ItSolutionStuff.com.
-                  </div>
-                </div>
-              </div>
 
-            <!-- <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <div class="buttonLeave">
+                <button
+                    class= "atend"
+                    (click) = "sair()"
+                    >
+                    SAIR
+                </button>
+            </div>
+    
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                 click here
             </a>
             <div class="collapse" id="collapseExample">
@@ -79,11 +65,6 @@
                     </button>
                 </div>
             </div>
-        </div> -->
-        
-        
-        
-
-                
+        </div>         
     </div>
 </div>

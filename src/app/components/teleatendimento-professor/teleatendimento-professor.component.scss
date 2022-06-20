@@ -3,7 +3,7 @@
   background: url('https://media.tribunadointerior.com.br/2021/06/f325f4d7-6071e4fa519d7-utfpr.jpg');
   background-size: 137em 430px;
   padding: 5px;
-  height: 110px;
+  height: 12%;
   border-width: 1px;
   border-color: black;
   border-style: groove;
@@ -27,8 +27,15 @@
         
       }
 
+    }
+  }
+  
+  .row{
+    height: 75%;
     .buttonLeave{
-      padding-left: 5%;
+      width: 16%;
+      float: right;
+      margin-right: 5%;
       .atend {
         font-size: 15px;
         width: 106%;
@@ -39,24 +46,26 @@
         line-height: 24px;
       }
     }
+    .tamVideo{
+    height: 100%;
+    width: 100%;
+    margin-top: 2%;
+    display: center;
+    .video{
+      position: relative;
+      height: 100%;
+      width: 100% ;
+      margin: 0px 1%;
+      z-index: 1047;
+      .imgVideo{
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+      }
+    }
   }
 }
-
-.tamVideo{
-  height: 100%;
-  width: 100%;
-  margin-top: 5px;
-  display: center;
-  .video{
-    background-image: url('https://www.palaciopiratini.rs.gov.br/themes/modelo-hotsite/images/outros/MD_imgSemVideo.png');
-    background-size: cover;
-    position: relative;
-    top: 10%;
-    height: 470%;
-    margin: 0px 1%;
-  }
-}
-
+  
 .direita{
-  margin-top: 5px;
+  margin-top: 8px;
 }

@@ -16,6 +16,7 @@ export class TeleatendimentoProfessorComponent implements OnInit {
   aluno: string = ' ';
   eventObs: any;
   teste: boolean = true;
+  videoImg: boolean = true;
   constructor(
     private videoService: VideoService,
     private dataService: DataService,
@@ -31,43 +32,43 @@ export class TeleatendimentoProfessorComponent implements OnInit {
         this.socketService.cancelSubscription(this.aluno);
         this.notificationService.showInfo('O aluno finalizou o atendimento.');
       });
-  }
-
-  public isCollapsed = false;
-
-
-  chamarProximo(): void {
-    let nameRoom = uuid.v4();
-
-    this.videoService.joinSession(this.professor, nameRoom).subscribe({
-      next: (data) => {
-        this.dataService.chamarProximo(nameRoom).subscribe({
-          next: (data) => {
-            this.socketService.createSubscription(data.ra);
-            this.aluno = data.ra;
+    }
+    
+    chamarProximo(): void {
+      let nameRoom = uuid.v4();
+      
+      this.videoService.joinSession(this.professor, nameRoom).subscribe({
+        next: (data) => {
+          this.dataService.chamarProximo(nameRoom).subscribe({
+            next: (data) => {
+              this.socketService.createSubscription(data.ra);
+              this.aluno = data.ra;
+              this.videoImg = false;
+            },
+            error: (error) => {
+              this.notificationService.showError(
+                error.error.error_message.message
+                );
+                this.videoImg = true;
+                this.videoService.hangup();
+              },
+            });
           },
           error: (error) => {
-            this.notificationService.showError(
-              error.error.error_message.message
-            );
-            this.videoService.hangup();
+            this.notificationService.showError(error.error.error_message.message);
           },
         });
-      },
-      error: (error) => {
-        this.notificationService.showError(error.error.error_message.message);
-      },
-    });
-  }
-
-  sair() {
-    this.router.navigate(['/']);
-  }
-
-  encerrarAtendimento() {
-    this.videoService.hangup();
-    this.socketService.cancelSubscription(this.aluno);
-    this.dataService.finalizarProfessor(this.aluno).subscribe();
+      }
+      
+      sair() {
+        this.router.navigate(['/']);
+      }
+      
+    encerrarAtendimento() {
+      this.videoImg = true;
+      this.videoService.hangup();
+      this.socketService.cancelSubscription(this.aluno);
+      this.dataService.finalizarProfessor(this.aluno).subscribe();
   }
 
   ngOnInit(): void {}
