@@ -41,7 +41,12 @@ export class TeleatendimentoProfessorComponent implements OnInit {
           next: (data) => {
             this.socketService.createSubscription(data.ra);
             this.aluno = data.ra;
-            this.dataService.registrarAtendimento(data.ra, this.professor).subscribe();
+            this.dataService.registrarAtendimento(data.ra, this.professor).subscribe(
+              () => {},
+              (error) => {
+                this.notificationService.showError(error.error.error_message.message);
+              }
+            );
           },
           error: (error) => {
             this.notificationService.showError(
