@@ -124,6 +124,18 @@ export class DataService {
         retry(3)
       );
   }
+  
+  registrarAtendimento(ra, nomeProfessor): any {
+    var json = {
+      ra: ra,
+      professor: nomeProfessor
+    };
+    return this.http
+      .post<any>(`${environment.teleatendimentoUrl}/atendimento/registrar`, json)
+      .pipe(
+        retry(3)
+      );
+  }
 
 }
 
