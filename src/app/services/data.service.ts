@@ -136,6 +136,30 @@ export class DataService {
         retry(3)
       );
   }
+  
+  buscarHistoricoAluno(ra): any {
+    var json = {
+      ra: ra,
+    };
+    return this.http
+      .post<any>(`${environment.teleatendimentoUrl}/atendimento/`, json)
+      .pipe(
+        retry(3)
+      );
+  }
+  
+  avaliarAtendimento(avaliacao, comentario): any {
+    var json = {
+      ra: this.ra,
+      avaliacao: avaliacao,
+      comentario: comentario
+    };
+    return this.http
+      .post<any>(`${environment.teleatendimentoUrl}/atendimento/avaliar`, json)
+      .pipe(
+        retry(3)
+      );
+  }
 
 }
 

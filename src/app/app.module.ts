@@ -20,6 +20,8 @@ import { TeleatendimentoProfessorComponent } from './components/teleatendimento-
 import { PageMainLayoutComponent } from './layouts/page-main-layout/page-main-layout.component';
 import { TeleatendimentoLayoutComponent } from './layouts/teleatendimento-layout/teleatendimento-layout.component';
 import { AvaliacaoAtendimentoComponent } from './components/avaliacao-atendimento/avaliacao-atendimento.component';
+import { HistoricoAlunoComponent } from './components/historico-aluno/historico-aluno.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { AvaliacaoAtendimentoComponent } from './components/avaliacao-atendiment
     ContadorFilaComponent,
     QuantidadeEsperaComponent,
     AvaliacaoAtendimentoComponent,
+    HistoricoAlunoComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import { AvaliacaoAtendimentoComponent } from './components/avaliacao-atendiment
     BrowserAnimationsModule,
     MatSliderModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
