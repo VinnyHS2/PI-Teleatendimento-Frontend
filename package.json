@@ -29,6 +29,7 @@
     "jquery": "^3.6.0",
     "js-cookie": "^3.0.1",
     "net": "^1.0.2",
+    "ng-sidebar": "^9.4.3",
     "popper.js": "^1.16.1",
     "rxjs": "~7.4.0",
     "sockjs-client": "^1.6.0",

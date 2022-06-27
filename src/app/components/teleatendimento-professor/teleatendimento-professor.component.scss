@@ -1,4 +1,5 @@
 
+
 #sticker{
   background: url('https://media.tribunadointerior.com.br/2021/06/f325f4d7-6071e4fa519d7-utfpr.jpg');
   background-size: 100%;
@@ -17,25 +18,48 @@
     justify-content: flex-end;
     flex-direction: row;
     
-      .msgProfessor{
-        font-weight: bolder;
-        font-size: 17px;
-      }
-      .fila{
-        font-weight: bolder;
-        font-size: 17px;
-        
-      }
+    .msgProfessor{
+      font-weight: bolder;
+      font-size: 17px;
+    }
+    .fila{
+      font-weight: bolder;
+      font-size: 17px;
+      
+    }
+    
   }
 }
+
+.row{
+  height: 75%;
   
-  .row{
-    height: 75%;
-    .buttonLeave{
-      width: 55px;
-      float: right;
-      margin-right: 8%;
-      margin-top: 3%;
+  .col-md-2{
+    height: 100%;
+    .esquerda{
+      .ng-sidebar-content{
+        height: 5%;
+      }
+      .ng-sideBar {
+        height: 100%;
+        width: 100%;
+        background: #a1c3e1;
+      }
+    }
+  }
+  
+
+
+  
+  
+  .col-md-8{
+    margin-left: 0%
+  }
+  .buttonLeave{
+    width: 55px;
+    float: right;
+    margin-right: 8%;
+    margin-top: 3%;
       .atend {
         font-size: 15px;
         width: 106%;

@@ -1,3 +1,6 @@
+
+    
+
 <div id="sticker" class="header-area hidden-xs">
     <div class="container">
         <div class="row">
@@ -26,6 +29,40 @@
 
     
 <div class="row">
+    
+    <div class="col-md-2">
+        
+        
+        <div class="ng-sidebar-content">
+            <button (click) = "toggleSidebar()" >
+                Open SideBar
+            </button>
+        </div>
+        
+        <ng-sidebar-container>
+            
+            <ng-sidebar [(opened)]="opened" >
+                <div class="sideBar" style="background-color: #a1c3e1">
+                    122333444455555                
+                    <div id="botaoOpcao">
+                        <div class="card card-lista">
+                            <div id="header" class="card-header text-center">
+                                Ordem da Fila
+                            </div>
+                
+                            <div class="bloco-quantidade-fila">
+                                <div class = "contador" *ngFor="let item of alunos; let i = index">
+                                    {{i+1}} RA:{{ item }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-sidebar> 
+            
+        </ng-sidebar-container>
+    </div>
+
     <div class="col-md-8 offset-md-2">
         <div class="tamVideo">
             <div class="video" >
@@ -43,7 +80,8 @@
             </button>
         </div>
         <div class="direita">
-    
+            
+
             <div id="atendimento">
                 <div class="card card-atendendo">
                     <div id="header" class="card-header text-center">
@@ -74,23 +112,6 @@
                 </div>
             </div>
 
-            <button class = "opcao" (click) = "BotaoOpcao()">
-                Lista da fila
-            </button>
-
-            <div id="botaoOpcao" *ngIf="opcoes == true">
-                <div class="card card-lista">
-                    <div id="header" class="card-header text-center">
-                        Lista de Presentes
-                    </div>
-
-                    <div class="bloco-quantidade-fila">
-                        <div class = "contador" *ngFor="let item of alunos; let i = index">
-                            {{i}} RA:{{ item }}
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>         
     </div>
 </div>

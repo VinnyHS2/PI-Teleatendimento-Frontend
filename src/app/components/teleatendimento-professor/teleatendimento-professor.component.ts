@@ -19,6 +19,7 @@ export class TeleatendimentoProfessorComponent implements OnInit {
   videoImg: boolean = true;
   opcoes: boolean = false;
   alunos = new Array<any>();
+  opened = false;
 
   constructor(
     private videoService: VideoService,
@@ -37,6 +38,11 @@ export class TeleatendimentoProfessorComponent implements OnInit {
       });
     }
     
+    toggleSidebar(){
+      this.opened = !this.opened;
+      console.log(this.opened);
+    }
+
     BotaoOpcao(){
       if(this.opcoes == true){
         this.opcoes = false;

@@ -21,7 +21,8 @@ import { PageMainLayoutComponent } from './layouts/page-main-layout/page-main-la
 import { TeleatendimentoLayoutComponent } from './layouts/teleatendimento-layout/teleatendimento-layout.component';
 import { AvaliacaoAtendimentoComponent } from './components/avaliacao-atendimento/avaliacao-atendimento.component';
 import { HistoricoAlunoComponent } from './components/historico-aluno/historico-aluno.component';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+import { SidebarModule } from 'ng-sidebar';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import {MatTableModule} from '@angular/material/table';
     MatSliderModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    MatTableModule
+    MatTableModule,
+    SidebarModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
