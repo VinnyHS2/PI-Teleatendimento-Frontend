@@ -17,6 +17,9 @@ export class TeleatendimentoProfessorComponent implements OnInit {
   eventObs: any;
   teste: boolean = true;
   videoImg: boolean = true;
+  opcoes: boolean = false;
+  alunos = new Array<any>();
+
   constructor(
     private videoService: VideoService,
     private dataService: DataService,
@@ -34,6 +37,15 @@ export class TeleatendimentoProfessorComponent implements OnInit {
       });
     }
     
+    BotaoOpcao(){
+      if(this.opcoes == true){
+        this.opcoes = false;
+      }else{
+        this.opcoes = true;
+      }
+    }
+    
+
     chamarProximo(): void {
       let nameRoom = uuid.v4();
       
@@ -71,5 +83,20 @@ export class TeleatendimentoProfessorComponent implements OnInit {
       this.dataService.finalizarProfessor(this.aluno).subscribe();
   }
 
-  ngOnInit(): void {}
+
+
+  ngOnInit(): void {
+    this.dataService.quantidadeFila().subscribe({
+      next: (data) => {
+        this.alunos = data.ra;
+      },
+    });
+    this.socketService.onEvent('quantidade').subscribe((data) => {
+      this.dataService.quantidadeFila().subscribe({
+        next: (data) => {
+          this.alunos = data.ra;
+        },
+      });
+    });
+  }
 }

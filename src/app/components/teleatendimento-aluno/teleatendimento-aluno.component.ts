@@ -33,7 +33,6 @@ export class TeleatendimentoAlunoComponent implements OnInit {
     });
   }
 
-
   sair(){
     this.videoService.hangupAluno();
     this.socketService.disconnect().subscribe();

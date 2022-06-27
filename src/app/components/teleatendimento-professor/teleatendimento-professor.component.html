@@ -34,34 +34,61 @@
         </div>
     </div>
     <div class="col-md-2">
+        <div class="buttonLeave">
+            <button
+                class= "atend"
+                (click) = "sair()"
+                >
+                SAIR
+            </button>
+        </div>
         <div class="direita">
-            <div class="buttonLeave">
-                <button
-                    class= "atend"
-                    (click) = "sair()"
-                    >
-                    SAIR
-                </button>
-            </div>
     
-            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                click here
-            </a>
-            <div class="collapse" id="collapseExample">
-                <div id="div-botoes">
-                    <button
-                    class="atend-chamar-encerrar"
-                    (click) = "chamarProximo()"
-                    >
-                    Chamar Próximo
-                    </button>
-                
-                    <button
-                    class="atend-chamar-encerrar"
-                    (click) = "encerrarAtendimento()"
-                    >
-                    Encerrar Atendimento
-                    </button>
+            <div id="atendimento">
+                <div class="card card-atendendo">
+                    <div id="header" class="card-header text-center">
+                    Quantidade de alunos em espera:
+                    </div>
+
+                    <div class="bloco-quantidade-fila">
+                        <div class = "contador">
+                            <app-contador-fila [isProfessor]="teste"></app-contador-fila>
+                        </div>
+                    </div>
+
+                    <div id="div-botoes">
+                        <button
+                        class="atend-chamar-encerrar"
+                        (click) = "chamarProximo()"
+                        >
+                        Chamar Próximo
+                        </button>
+
+                        <button
+                        class="atend-chamar-encerrar"
+                        (click) = "encerrarAtendimento()"
+                        >
+                        Encerrar Atendimento
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <button class = "opcao" (click) = "BotaoOpcao()">
+                Lista da fila
+            </button>
+
+            <div id="botaoOpcao" *ngIf="opcoes == true">
+                <div class="card card-lista">
+                    <div id="header" class="card-header text-center">
+                        Lista de Presentes
+                    </div>
+
+                    <div class="bloco-quantidade-fila">
+                        <div class = "contador" *ngFor="let item of alunos; let i = index">
+                            {{i}} RA:{{ item }}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>         

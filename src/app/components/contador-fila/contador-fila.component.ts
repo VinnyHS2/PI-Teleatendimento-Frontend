@@ -18,6 +18,7 @@ export class ContadorFilaComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("entrou",this.isProfessor)
+    
     if (this.isProfessor) {
       this.dataService.quantidadeFila().subscribe({
         next: (data) => {
@@ -42,5 +43,6 @@ export class ContadorFilaComponent implements OnInit {
         }
       });
     }
+    
   }
 }

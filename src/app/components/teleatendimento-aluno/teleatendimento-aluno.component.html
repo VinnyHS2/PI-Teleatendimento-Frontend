@@ -1,43 +1,44 @@
-
-<div class="row">
-
-    <div class="col-8">
-        <div class="div-esquerda">
-            <div class="logoUTFPR">
-                <img src="assets/images/logo-UTFPR.png" class="logo" />
-            </div>
-            <div class="msg">
-                Atendimento remoto UTFPR !!
-            </div>
-            <div class="video">
-                    <!-- <img src="assets/images/SemVideo.png" class="novideo." />  -->
-            </div>
-        </div>
-    </div>
-
-    <div class="col-4">
-        <div class="div-direita">
-            <button
-            class= "atend"
-            (click) = "sair()"
-            >
-                SAIR
-            </button>
-
-            <div class="informacoes-laterais">
-                <div class="bloco-atendendo">
-                    <div class="card card-atendendo">
-                        <div class="card-header text-center">Bem-Vindo a Reunião:</div>
-                        <div class="conteudo-atendendo">
+<div id="sticker" class="header-area hidden-xs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3">
+                        <div class="imgUTFPR">
+                            <img src="assets/images/logo-UTFPR.png" class="logo" />
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-sm-9">
+                        <div class="nameAluno">
+                            <div class="msgAluno">
+                                Bem-Vindo Aluno(a):
+                            </div>
                             <div class="fila">
-                                <span>{{ aluno }}</span>
+                                <span>{{ "2046393" }}</span>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-     </div>
- </div>
+    </div>
+</div>
 
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="tamVideo">
+            <div class="video" >
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="buttonLeave">
+            <button
+                class= "atend"
+                (click) = "sair()"
+                >
+                SAIR
+            </button>
+        </div>        
+    </div>
+</div>

@@ -1,15 +1,15 @@
 
 #sticker{
   background: url('https://media.tribunadointerior.com.br/2021/06/f325f4d7-6071e4fa519d7-utfpr.jpg');
-  background-size: 137em 430px;
+  background-size: 100%;
   padding: 5px;
-  height: 12%;
+  height: 13%;
   border-width: 1px;
   border-color: black;
   border-style: groove;
   .logo{
     margin-top: 2%;
-    width: 73%;
+    width: 70%;
   }
   .col-sm-9{
     display: flex;
@@ -26,16 +26,16 @@
         font-size: 17px;
         
       }
-
-    }
   }
+}
   
   .row{
     height: 75%;
     .buttonLeave{
-      width: 16%;
+      width: 55px;
       float: right;
-      margin-right: 5%;
+      margin-right: 8%;
+      margin-top: 3%;
       .atend {
         font-size: 15px;
         width: 106%;
@@ -68,4 +68,113 @@
   
 .direita{
   margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  #atendimento{
+    margin-top: 30%;
+    width: 130%;
+    .card-atendendo {
+      border: 2px solid #a1c3e1;
+      border-radius: 20px !important;
+      #header {
+        width: 100%;
+        background-color: #a1c3e1;
+        font-size: 1rem;
+        color: #103463;
+        padding: 1%;
+        text-align: center;
+        border-radius: 14px 14px 0px 0px;
+      }
+      #div-botoes {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        padding: 2%;
+        border: 3px solid #a1c3e1;
+        background-color: #a1c3e1;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: -8px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+
+        button.atend {
+          font-size: 0.8rem;
+          width: 36%;
+          background-color: #ffffff;
+          color: #103463;
+          padding: 1%;
+          border-radius: 10px;
+          margin: 0% 3%;
+          line-height: 1rem;
+        }
+
+        button.atend-chamar-encerrar {
+          font-size: 0.8rem;
+          width: 36%;
+          background-color: #fff;
+          color: #103463;
+          padding: 1%;
+          border-radius: 10px;
+          margin: 0 3%;
+          line-height: 1rem;
+          color: #fff;
+          border-color: #000;
+          background-color: #4287c3;
+          border: 1px solid #000;
+          cursor: pointer;
+
+          &:disabled {
+            cursor: not-allowed;
+            color: #000;
+            background-color: #a0a0a0;
+            border-color: #a0a0a0;
+          }
+        }
+      }
+    }
+  }
+  .opcao{
+    width: 100px;
+    height: 37px;
+    padding: 4%;
+    border-radius: 10px;
+    margin-top: 13px;
+    line-height: 1rem;
+    color: #fff;
+    border-color: #000;
+    background-color: #2078c5;
+    border: 0.3px solid #000;
+    cursor: pointer;
+  }
+
+  #botaoOpcao{
+    margin-top: 2%;
+    width: 130%;
+      .card-lista {
+        border: 2px solid #a1c3e1;
+        border-radius: 20px !important;
+        #header {
+          width: 100%;
+          background-color: #a1c3e1;
+          font-size: 1rem;
+          color: #103463;
+          padding: 1%;
+          text-align: center;
+          border-radius: 14px 14px 0px 0px;
+        }
+
+          button.atend {
+            font-size: 0.8rem;
+            width: 36%;
+            background-color: #ffffff;
+            color: #103463;
+            padding: 1%;
+            border-radius: 10px;
+            margin: 0% 3%;
+            line-height: 1rem;
+          }
+        }
+  }
 }
