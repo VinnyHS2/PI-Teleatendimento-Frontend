@@ -16,6 +16,9 @@ export class TeleatendimentoProfessorComponent implements OnInit {
   aluno: string = ' ';
   eventObs: any;
   teste: boolean = true;
+  videoImg: boolean = true;
+  alunos = new Array<any>();
+  opened = false;
   constructor(
     private videoService: VideoService,
     private dataService: DataService,
@@ -32,6 +35,12 @@ export class TeleatendimentoProfessorComponent implements OnInit {
         this.notificationService.showInfo('O aluno finalizou o atendimento.');
       });
   }
+
+  toggleSidebar(){
+    this.opened = !this.opened;
+    console.log(this.opened);
+  }
+
   chamarProximo(): void {
     let nameRoom = uuid.v4();
 
@@ -41,36 +50,47 @@ export class TeleatendimentoProfessorComponent implements OnInit {
           next: (data) => {
             this.socketService.createSubscription(data.ra);
             this.aluno = data.ra;
-            this.dataService.registrarAtendimento(data.ra, this.professor).subscribe(
-              () => {},
-              (error) => {
-                this.notificationService.showError(error.error.error_message.message);
-              }
-            );
+            this.videoImg = false;
           },
           error: (error) => {
             this.notificationService.showError(
               error.error.error_message.message
-            );
+              );
+            this.videoImg = true;
             this.videoService.hangup();
           },
         });
       },
       error: (error) => {
         this.notificationService.showError(error.error.error_message.message);
+        this.videoImg = true;
       },
     });
   }
-
+  
   sair() {
     this.router.navigate(['/']);
   }
-
+  
   encerrarAtendimento() {
+    this.videoImg = true;
     this.videoService.hangup();
     this.socketService.cancelSubscription(this.aluno);
     this.dataService.finalizarProfessor(this.aluno).subscribe();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.dataService.quantidadeFila().subscribe({
+      next: (data) => {
+        this.alunos = data.ra;
+      },
+    });
+    this.socketService.onEvent('quantidade').subscribe((data) => {
+      this.dataService.quantidadeFila().subscribe({
+        next: (data) => {
+          this.alunos = data.ra;
+        },
+      });
+    });
+  }
 }
