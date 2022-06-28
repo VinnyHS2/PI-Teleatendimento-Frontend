@@ -35,8 +35,17 @@ export class EsperaComponent implements OnInit {
     this.eventObs.unsubscribe();
     var myModal = new Modal(document.getElementById('exampleModal'));
     myModal.hide();
+    this.socketService.disconnect().subscribe();
     this.dataService.sairFila(Cookies.get('ra')).subscribe();
     this.dataService.finalizarAluno(Cookies.get('ra')).subscribe();
+    this.router.navigate(['/']);
+  }
+  voltarFinal() {
+    this.dataService.voltarFinalFila(Cookies.get('ra')).subscribe();
+  }
+  sairFila() {
+    this.dataService.sairFila(Cookies.get('ra')).subscribe();
+    this.socketService.disconnect().subscribe();
     this.router.navigate(['/']);
   }
 }

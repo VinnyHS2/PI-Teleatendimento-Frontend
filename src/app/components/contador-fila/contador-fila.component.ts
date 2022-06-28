@@ -37,9 +37,12 @@ export class ContadorFilaComponent implements OnInit {
         this.posicaoFila -= 1;
       });
       this.socketService.onEvent('sair').subscribe((data) => {
-        if ((data as number) < this.posicaoFila) {
+        if ((data as number) <= this.posicaoFila) {
           this.posicaoFila -= 1;
         }
+      });
+      this.socketService.onEvent('voltar-final').subscribe((data) => {
+        this.posicaoFila = data as number;
       });
     }
   }
