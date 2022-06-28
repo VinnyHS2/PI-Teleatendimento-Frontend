@@ -1,117 +1,98 @@
 
-    
-
-<div id="sticker" class="header-area hidden-xs">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div class="row">
-                    <div class="col-md-3 col-sm-3">
-                        <div class="imgUTFPR">
-                            <img src="assets/images/logo-UTFPR.png" class="logo" />
-                        </div>
-                    </div>
-                    <div class="col-md-9 col-sm-9">
-                        <div class="nameProfessor">
-                            <div class="msgProfessor">
-                                Bem-Vindo Professor(a):
-                            </div>
-                            <div class="fila">
-                                <span>{{ professor }}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-    
 <div class="row">
-    
-    <div class="col-md-2">
-        
-        
-        <div class="ng-sidebar-content">
-            <button (click) = "toggleSidebar()" >
-                Open SideBar
-            </button>
-        </div>
-        
-        <ng-sidebar-container>
-            
-            <ng-sidebar [(opened)]="opened" >
-                <div class="sideBar" style="background-color: #a1c3e1">
-                    122333444455555                
-                    <div id="botaoOpcao">
-                        <div class="card card-lista">
-                            <div id="header" class="card-header text-center">
-                                Ordem da Fila
-                            </div>
-                
-                            <div class="bloco-quantidade-fila">
-                                <div class = "contador" *ngFor="let item of alunos; let i = index">
-                                    {{i+1}} RA:{{ item }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </ng-sidebar> 
-            
-        </ng-sidebar-container>
-    </div>
-
-    <div class="col-md-8 offset-md-2">
-        <div class="tamVideo">
-            <div class="video" >
+    <div class="col-8">
+        <div class="div-esquerda">
+            <div class="logoUTFPR">
+                <img src="assets/images/logo-UTFPR.png" class="logo" />
+            </div>
+            <div class="msg">
+                Atendimento remoto UTFPR !!
+            </div>
+            <div class="video">
                 <img src="assets\images\SemVideo.png" class="imgVideo" *ngIf="videoImg == true" />
             </div>
         </div>
     </div>
-    <div class="col-md-2">
-        <div class="buttonLeave">
+
+    <div class="col-4">
+        <div class="div-direita">
             <button
-                class= "atend"
-                (click) = "sair()"
-                >
+            class= "atend"
+            (click) = "sair()"
+            >
                 SAIR
             </button>
-        </div>
-        <div class="direita">
+
+            <div class="ng-sidebar-content">
+                <button class = "botaoSideBar" (click) = "toggleSidebar()" >
+                    <span class="material-icons">
+                        list
+                    </span>
+                </button>
+            </div>
             
-
-            <div id="atendimento">
-                <div class="card card-atendendo">
-                    <div id="header" class="card-header text-center">
-                    Quantidade de alunos em espera:
-                    </div>
-
-                    <div class="bloco-quantidade-fila">
-                        <div class = "contador">
-                            <app-contador-fila [isProfessor]="teste"></app-contador-fila>
+            <ng-sidebar-container>
+                
+                <ng-sidebar position="right" [(opened)]="opened" >
+                    <div class="informacoes-laterais">
+                        <div class="bloco-atendendo">
+                            <div class="card card-atendendo">
+                                <div class="card-header text-center">Bem-Vindo Professor:</div>
+                                <div class="conteudo-atendendo">
+                                    <div class="fila">
+                                        <span>{{ professor }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div id="atendimento">
+                            <div class="card card-atendendo">
+                                <div id="header" class="card-header text-center">
+                                    Quantidade de alunos em espera
+                                </div>
+                                
+                                <div class="bloco-quantidade-fila">
+                                    <div class = "contador">
+                                        <app-contador-fila [isProfessor]="teste"></app-contador-fila>
+                                    </div>
+                                </div>
+                                
+                                <div id="div-botoes">
+                                    <button
+                                    class="atend-chamar-encerrar"
+                                    (click) = "chamarProximo()"
+                                    >
+                                    Chamar Próximo
+                                </button>
+                                
+                                <button
+                                class="atend-chamar-encerrar"
+                                (click) = "encerrarAtendimento()"
+                                >
+                                Encerrar Atendimento
+                            </button>
                         </div>
                     </div>
-
-                    <div id="div-botoes">
-                        <button
-                        class="atend-chamar-encerrar"
-                        (click) = "chamarProximo()"
-                        >
-                        Chamar Próximo
-                        </button>
-
-                        <button
-                        class="atend-chamar-encerrar"
-                        (click) = "encerrarAtendimento()"
-                        >
-                        Encerrar Atendimento
-                        </button>
+                </div>
+                <div class="sideBar">
+                    <div class="nomeLista">
+                        Ordem da Fila
+                    </div>
+                    
+                    <div class="bloco-fila">
+                        <div class = "contador" *ngFor="let item of alunos; let i = index">
+                            {{i+1}} -> RA:{{ item }}
+                        </div>
                     </div>
                 </div>
             </div>
-
-        </div>         
-    </div>
+        </ng-sidebar> 
+    
+    </ng-sidebar-container>
+        </div>
 </div>
+</div>
+

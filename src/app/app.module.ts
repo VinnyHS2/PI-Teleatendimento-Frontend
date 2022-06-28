@@ -23,6 +23,7 @@ import { AvaliacaoAtendimentoComponent } from './components/avaliacao-atendiment
 import { HistoricoAlunoComponent } from './components/historico-aluno/historico-aluno.component';
 import { MatTableModule } from '@angular/material/table';
 import { SidebarModule } from 'ng-sidebar';
+import { MatIconModule } from '@angular/material/icon'
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { SidebarModule } from 'ng-sidebar';
     ReactiveFormsModule,
     MatSnackBarModule,
     MatTableModule,
-    SidebarModule.forRoot()
+    SidebarModule.forRoot(),
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
