@@ -1,13 +1,24 @@
 .quadrado {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-size: larger;
-        width: 400px;
-        height: 300px;
-        background-color: #fff;
-        opacity: 0.9;
-        box-shadow: 15px 19px 12px -5px rgba(0, 0, 0, 0.1);
-        border-radius: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+  width: 400px;
+  height: 300px;
+  background-color: #fff;
+  opacity: 0.9;
+  box-shadow: 15px 19px 12px -5px rgba(0, 0, 0, 0.1);
+  border-radius: 2em;
+  .buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 3%;
+    .btn{
+      width: 45%
+    }
+  }
 }
